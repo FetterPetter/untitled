@@ -71,19 +71,19 @@ export function Application() {
       <h1 style={{ fontSize: fontState }}>Velkommen</h1>{" "}
       <ButtonMaker handleClick={fontChange} buttonName={"Klikk her?"} />
       <p>klikk på {randomBilde.name}</p>
-        {antallForsok > 20 ? (
-            <>
-                <p>KLIKK PÅ DET BILDET UNDER HER.......</p>
-                <img
-                    src={randomBilde.url}
-                    style={{
-                        width: (antallForsok * antallForsok) + "px",
-                        height: (antallForsok * antallForsok) + "px",
-                    }}
-                    onClick={() => bildeKlikk(randomBilde.name)}
-                />
-            </>
-        ) : null}
+      {antallForsok > 20 ? (
+        <>
+          <p>KLIKK PÅ DET BILDET UNDER HER.......</p>
+          <img
+            src={randomBilde.url}
+            style={{
+              width: antallForsok * antallForsok + "px",
+              height: antallForsok * antallForsok + "px",
+            }}
+            onClick={() => bildeKlikk(randomBilde.name)}
+          />
+        </>
+      ) : null}
       <div>
         {bildeViser.map((bilde) => (
           <BildeMaker
@@ -103,7 +103,6 @@ export function Application() {
         {antallForsok > 10 ? (
           <p>Du burde få dette til på under {antallForsok} forsøk</p>
         ) : null}
-
       </div>
       <div>
         {farger.map((farger) =>
