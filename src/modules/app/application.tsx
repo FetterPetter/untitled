@@ -1,10 +1,13 @@
 import React, { use, useEffect, useState } from "react";
+// @ts-ignore
 import andImage from "./bilder/and.jpg";
+// @ts-ignore
 import kattImage from "./bilder/katt.jpg";
+// @ts-ignore
 import kaninImage from "./bilder/kanin.jpg";
 export function Application() {
   const [text, setText] = useState("");
-  const [mellomText, setMellomText] = useState(null);
+  const [mellomText, setMellomText] = useState<number>(0);
   const [fargeText, setFargeText] = useState("");
   const [hover, setHover] = useState(false);
   const farger = ["red", "blue", "green", "darkblue"];
