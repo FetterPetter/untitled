@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-// @ts-ignore
-import andImage from "./bilder/and.jpg";
-// @ts-ignore
-import kattImage from "./bilder/katt.jpg";
-// @ts-ignore
-import kaninImage from "./bilder/kanin.jpg";
+
 export function Application() {
   const [text, setText] = useState("");
   const [mellomText, setMellomText] = useState<number>(0);
@@ -15,9 +10,9 @@ export function Application() {
   const [fontTall, setFontTall] = useState(0);
   const [fontState, setFontState] = useState("50px");
   const bildeViser = [
-    { id: "1", name: "and", url: andImage },
-    { id: "2", name: "katt", url: kattImage },
-    { id: "3", name: "kanin", url: kaninImage },
+    { id: "1", name: "and", url: "/bilder/and.jpg" },
+    { id: "2", name: "katt", url: "/bilder/katt.jpg" },
+    { id: "3", name: "kanin", url: "/bilder/kanin.jpg" },
   ];
   const [randomBilde, setRandomBilde] = useState(bildeViser[0]);
   const [riktigTekst, setRiktigTekst] = useState("");
@@ -31,8 +26,7 @@ export function Application() {
   }, []);
   function handleClick() {
     if (text !== null) {
-      // @ts-ignore
-      setMellomText(text);
+      setMellomText(Number(text));
     }
   }
   function handleSortClick() {
