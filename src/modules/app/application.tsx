@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // @ts-ignore
 import andImage from "./bilder/and.jpg";
 // @ts-ignore

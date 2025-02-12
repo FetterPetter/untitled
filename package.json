@@ -6,7 +6,8 @@
     "test": "tsc --noEmit && prettier --check .",
     "dev": "vite",
     "prepare": "husky",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
