@@ -10,9 +10,9 @@ export function Application() {
   const [fontTall, setFontTall] = useState(0);
   const [fontState, setFontState] = useState("50px");
   const bildeViser = [
-    { id: "1", name: "and", url: "/bilder/and.jpg" },
-    { id: "2", name: "katt", url: "/bilder/katt.jpg" },
-    { id: "3", name: "kanin", url: "/bilder/kanin.jpg" },
+    { id: "1", name: "and", url: "./bilder/and.jpg" },
+    { id: "2", name: "katt", url: "./bilder/katt.jpg" },
+    { id: "3", name: "kanin", url: "./bilder/kanin.jpg" },
   ];
   const [randomBilde, setRandomBilde] = useState(bildeViser[0]);
   const [riktigTekst, setRiktigTekst] = useState("");
@@ -69,6 +69,7 @@ export function Application() {
         <>
           <p>KLIKK PÅ DET BILDET UNDER HER.......</p>
           <img
+            alt="bIlD3 Av stort Dyr"
             src={randomBilde.url}
             style={{
               width: antallForsok * antallForsok + "px",
@@ -155,6 +156,7 @@ function ListMaker({ listeNummer }: { listeNummer: number }) {
 function BildeMaker({ url, bildeKlikk }: { url: string; bildeKlikk: any }) {
   return (
     <img
+      alt="bilde av dyr"
       src={url}
       style={{ width: "100px", height: "100px" }}
       onClick={bildeKlikk}
