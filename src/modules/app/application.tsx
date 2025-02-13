@@ -3,6 +3,7 @@ import { BildeSpill } from "./bildespill";
 import { ButtonMaker } from "./buttonmaker";
 import { InputFieldMaker } from "./inputFieldMaker";
 import { ListMaker } from "./listMaker";
+import { HeaderChanger } from "./headerChanger";
 
 export function Application() {
   const [text, setText] = useState("");
@@ -10,9 +11,6 @@ export function Application() {
   const [fargeText, setFargeText] = useState("");
   const [hover, setHover] = useState(false);
   const farger = ["red", "blue", "green", "darkblue"];
-  const font = ["10px", "25px", "50px"];
-  const [fontTall, setFontTall] = useState(0);
-  const [fontState, setFontState] = useState("50px");
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
@@ -27,20 +25,10 @@ export function Application() {
   function fargeClick(farge: string) {
     alert("du klikket på " + farge);
   }
-  function fontChange() {
-    if (fontTall >= 2) {
-      setFontTall(0);
-      setFontState(font[fontTall]);
-    } else {
-      setFontState(font[fontTall]);
-      setFontTall(fontTall + 1);
-    }
-  }
 
   return (
     <>
-      <h1 style={{ fontSize: fontState }}>Velkommen</h1>{" "}
-      <ButtonMaker handleClick={fontChange} buttonName={"Klikk her?"} />
+      <HeaderChanger />
       <BildeSpill />
       <div>
         {farger.map((farger) =>
