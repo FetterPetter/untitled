@@ -17,7 +17,9 @@ export function HeaderChanger() {
   return (
     <>
       <h1 style={{ fontSize: fontState }}>Velkommen</h1>{" "}
-      <ButtonMaker handleClick={fontChange} buttonName={"Klikk her?"} />
+      <div style={{ position: "absolute", left: "350", top: "70" }}>
+        <ButtonMaker handleClick={fontChange} buttonName={"Klikk her?"} />
+      </div>
     </>
   );
 }
