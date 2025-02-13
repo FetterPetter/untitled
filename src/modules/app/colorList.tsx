@@ -24,13 +24,15 @@ export function ColorList() {
   }
   return (
     <>
-      {farger.map((farger) =>
-        farger !== fargeText ? (
-          <p style={{ color: farger }} onClick={() => fargeClick(farger)}>
-            {farger}
-          </p>
-        ) : null,
-      )}{" "}
+      <ul>
+        {farger.map((farger) =>
+          farger !== fargeText ? (
+            <li style={{ color: farger }} onClick={() => fargeClick(farger)}>
+              {farger}
+            </li>
+          ) : null,
+        )}{" "}
+      </ul>
       <InputFieldMaker onChange={handleChange} />
       <ButtonMaker handleClick={handleClick} buttonName={"skriv tall"} />
       <ButtonMaker handleClick={handleSortClick} buttonName={"skriv farge"} />
