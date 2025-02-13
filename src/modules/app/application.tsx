@@ -4,6 +4,7 @@ import { BildeSpill } from "./bildespill";
 import { HeaderChanger } from "./headerChanger";
 import { ColorList } from "./colorList";
 import { RarHoverFontgreier } from "./rarHoverFontgreier";
+import { Timer } from "./timer";
 
 export function Application() {
   return (
@@ -14,6 +15,7 @@ export function Application() {
         <ColorList />
         <RarHoverFontgreier />
       </div>
+      <Timer />
     </>
   );
 }
