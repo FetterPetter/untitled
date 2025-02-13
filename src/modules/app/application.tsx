@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { BildeSpill } from "./bildespill";
 
 export function Application() {
   const [text, setText] = useState("");
@@ -9,21 +10,21 @@ export function Application() {
   const font = ["10px", "25px", "50px"];
   const [fontTall, setFontTall] = useState(0);
   const [fontState, setFontState] = useState("50px");
-  const bildeViser = [
-    { id: "1", name: "and", url: "./bilder/and.jpg" },
-    { id: "2", name: "katt", url: "./bilder/katt.jpg" },
-    { id: "3", name: "kanin", url: "./bilder/kanin.jpg" },
-  ];
-  const [randomBilde, setRandomBilde] = useState(bildeViser[0]);
-  const [riktigTekst, setRiktigTekst] = useState("");
-  const [antallForsok, setAntallForsok] = useState(0);
-  const [riktig, setRiktig] = useState(true);
+  /* const bildeViser = [
+     { id: "1", name: "and", url: "./bilder/and.jpg" },
+     { id: "2", name: "katt", url: "./bilder/katt.jpg" },
+     { id: "3", name: "kanin", url: "./bilder/kanin.jpg" },
+   ];
+   const [randomBilde, setRandomBilde] = useState(bildeViser[0]);
+   const [riktigTekst, setRiktigTekst] = useState("");
+   const [antallForsok, setAntallForsok] = useState(0);
+   const [riktig, setRiktig] = useState(true);*/
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
-  useEffect(() => {
+  /* useEffect(() => {
     pickRandomBilde();
-  }, []);
+  }, []); */
   function handleClick() {
     if (text !== null) {
       setMellomText(Number(text));
@@ -44,7 +45,7 @@ export function Application() {
       setFontTall(fontTall + 1);
     }
   }
-  function bildeKlikk(bildeNavn: string) {
+  /*  function bildeKlikk(bildeNavn: string) {
     if (randomBilde.name === bildeNavn) {
       setRiktigTekst("Riktig! bra jobba");
       pickRandomBilde();
@@ -55,16 +56,17 @@ export function Application() {
       setAntallForsok(antallForsok + 1);
       setRiktig(false);
     }
-  }
-  function pickRandomBilde() {
+  }*/
+  /*function pickRandomBilde() {
     const randomIndex = Math.floor(Math.random() * bildeViser.length);
     setRandomBilde(bildeViser[randomIndex]);
-  }
+  }*/
   return (
     <>
       <h1 style={{ fontSize: fontState }}>Velkommen</h1>{" "}
       <ButtonMaker handleClick={fontChange} buttonName={"Klikk her?"} />
-      <p>klikk på {randomBilde.name}</p>
+      <BildeSpill />
+      {/* <p>klikk på {randomBilde.name}</p>
       {antallForsok > 20 ? (
         <>
           <p>KLIKK PÅ DET BILDET UNDER HER.......</p>
@@ -98,7 +100,7 @@ export function Application() {
         {antallForsok > 10 ? (
           <p>Du burde få dette til på under {antallForsok} forsøk</p>
         ) : null}
-      </div>
+      </div> */}
       <div>
         {farger.map((farger) =>
           farger !== fargeText ? (
@@ -153,7 +155,7 @@ function InputFieldMaker({
 function ListMaker({ listeNummer }: { listeNummer: number }) {
   return <li>{listeNummer}</li>;
 }
-function BildeMaker({ url, bildeKlikk }: { url: string; bildeKlikk: any }) {
+/* function BildeMaker({ url, bildeKlikk }: { url: string; bildeKlikk: any }) {
   return (
     <img
       alt="bilde av dyr"
@@ -162,4 +164,4 @@ function BildeMaker({ url, bildeKlikk }: { url: string; bildeKlikk: any }) {
       onClick={bildeKlikk}
     />
   );
-}
+}*/
